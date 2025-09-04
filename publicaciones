@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Publicaciones — Laboratorio de Fauna Silvestre</title>
+  <meta name="description" content="Publicaciones del laboratorio de fauna silvestre." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="wrap topbar">
+      <div class="brand">
+        <div class="logo">🦊</div>
+        <div>Laboratorio de Fauna Silvestre<br><span style="opacity:.8;font-weight:500">Universidad / Instituto</span></div>
+      </div>
+      <nav aria-label="Navegación principal">
+        <a href="index.html">Home</a>
+        <a href="equipo.html">Equipo</a>
+        <a href="investigacion.html">Investigación</a>
+        <a href="publicaciones.html" class="active">Publicaciones</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+    <div class="wrap hero">
+      <h1>Publicaciones</h1>
+      <p>Artículos, informes y materiales de divulgación del laboratorio.</p>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap narrow">
+        <h2>Publicaciones seleccionadas</h2>
+        <p class="lead">Puedes enlazar al DOI o al PDF público.</p>
+        <table class="table" aria-label="Tabla de publicaciones">
+          <thead>
+            <tr><th>Año</th><th>Citación</th><th>Enlace</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2024</td>
+              <td><strong>Apellido, N.</strong>, Apellido, N. Título del artículo. <em>Revista Ejemplo</em>, 12(3), 123–135.</td>
+              <td><a href="#" aria-disabled="true">DOI</a></td>
+            </tr>
+            <tr>
+              <td>2023</td>
+              <td><strong>Apellido, N.</strong> Monitoreo de mamíferos con cámaras trampa: buenas prácticas. <em>Informe Técnico</em>.</td>
+              <td><a href="#" aria-disabled="true">PDF</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>© <span id="year"></span> Laboratorio de Fauna Silvestre — Universidad</div>
+      <div>Contenido bajo <a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank" rel="noopener">CC BY 4.0</a></div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
