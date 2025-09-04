@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contacto — Laboratorio de Fauna Silvestre</title>
+  <meta name="description" content="Información de contacto del laboratorio de fauna silvestre." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="wrap topbar">
+      <div class="brand">
+        <div class="logo">🦊</div>
+        <div>Laboratorio de Fauna Silvestre<br><span style="opacity:.8;font-weight:500">Universidad / Instituto</span></div>
+      </div>
+      <nav aria-label="Navegación principal">
+        <a href="index.html">Home</a>
+        <a href="equipo.html">Equipo</a>
+        <a href="investigacion.html">Investigación</a>
+        <a href="publicaciones.html">Publicaciones</a>
+        <a href="contacto.html" class="active">Contacto</a>
+      </nav>
+    </div>
+    <div class="wrap hero">
+      <h1>Contacto</h1>
+      <p>¿Te interesa colaborar o hacer tu tesis con nosotros? Escríbenos.</p>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <div class="grid">
+          <div class="card">
+            <h3>Correo</h3>
+            <p class="muted"><a href="mailto:correo@universidad.cl">correo@universidad.cl</a></p>
+          </div>
+          <div class="card">
+            <h3>Dirección</h3>
+            <p class="muted">Facultad / Universidad, Ciudad, País</p>
+          </div>
+          <div class="card">
+            <h3>Enlaces</h3>
+            <p class="muted">
+              <a href="#" aria-disabled="true">GitHub</a> ·
+              <a href="#" aria-disabled="true">Google Scholar</a> ·
+              <a href="#" aria-disabled="true">X / Twitter</a> ·
+              <a href="#" aria-disabled="true">Wildlife Insights</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>© <span id="year"></span> Laboratorio de Fauna Silvestre — Universidad</div>
+      <div>Contenido bajo <a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank" rel="noopener">CC BY 4.0</a></div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
