@@ -1,11 +1,75 @@
 <!doctype html>
-<html>
+<html lang="es">
 <head>
   <meta charset="utf-8" />
-  <title>Laboratorio de Fauna Silvestre</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Home — Laboratorio de Fauna Silvestre</title>
+  <meta name="description" content="Laboratorio de investigación en fauna silvestre: monitoreo, ecología y conservación." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Bienvenidos al Laboratorio de Fauna Silvestre</h1>
-  <p>Este es el sitio oficial del laboratorio. Pronto añadiremos más información.</p>
+  <header class="header">
+    <div class="wrap topbar">
+      <div class="brand">
+        <div class="logo">🦊</div>
+        <div>Laboratorio de Fauna Silvestre<br><span style="opacity:.8;font-weight:500">Universidad / Instituto</span></div>
+      </div>
+      <nav aria-label="Navegación principal">
+        <a href="index.html" class="active">Home</a>
+        <a href="equipo.html">Equipo</a>
+        <a href="investigacion.html">Investigación</a>
+        <a href="publicaciones.html">Publicaciones</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+    <div class="wrap hero">
+      <h1>Home</h1>
+      <p>Monitoreamos mamíferos y aves usando cámaras trampa, análisis cuantitativos y ciencia colaborativa para informar decisiones de conservación.</p>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap narrow">
+        <h2>Quiénes somos</h2>
+        <p class="lead">Somos un equipo dedicado a la <strong>ecología y conservación de la fauna silvestre</strong> en Chile y Latinoamérica. Integramos monitoreo con cámaras trampa, análisis estadístico y trabajo con agencias públicas y ONG.</p>
+        <p>Trabajamos con protocolos estandarizados, flujos reproducibles y principios de ciencia abierta para generar información útil para la gestión de la biodiversidad y el diseño de planes de conservación.</p>
+      </div>
+    </section>
+
+    <section class="alt">
+      <div class="wrap">
+        <h2>Áreas principales</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Monitoreo con cámaras trampa</h3>
+            <p class="muted">Diseño de muestreo, protocolos y capacitación para redes de monitoreo.</p>
+            <span class="pill">Wildlife Insights</span> <span class="pill">Estandarización</span>
+          </article>
+          <article class="card">
+            <h3>Ecología cuantitativa</h3>
+            <p class="muted">Modelos de ocupación, GLMM y N-mixture para inferir uso de hábitat y tendencias.</p>
+            <span class="pill">R</span> <span class="pill">Reproducibilidad</span>
+          </article>
+          <article class="card">
+            <h3>Conservación aplicada</h3>
+            <p class="muted">Co-diseño de indicadores con instituciones públicas y privadas.</p>
+            <span class="pill">SBAP</span> <span class="pill">Áreas protegidas</span>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>© <span id="year"></span> Laboratorio de Fauna Silvestre — Universidad</div>
+      <div>Contenido bajo <a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank" rel="noopener">CC BY 4.0</a></div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
