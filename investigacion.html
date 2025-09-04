@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Investigación — Laboratorio de Fauna Silvestre</title>
-  <meta name="description" content="Líneas y proyectos de investigación del laboratorio." />
+  <meta name="description" content="Líneas y proyectos de investigación del Laboratorio de Fauna Silvestre." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -14,11 +14,18 @@
   <header class="header">
     <div class="wrap topbar">
       <div class="brand">
-        <div class="logo">🦊</div>
-        <div>Laboratorio de Fauna Silvestre<br><span style="opacity:.8;font-weight:500">Universidad / Instituto</span></div>
+        <div class="logo">
+          <img src="img/logo-lab.png" alt="Logo Laboratorio de Fauna Silvestre" />
+        </div>
+        <div>
+          Laboratorio de Fauna Silvestre<br>
+          <span style="opacity:.8;font-weight:500">
+            Instituto de Conservación, Biodiversidad y Territorio — Universidad Austral de Chile
+          </span>
+        </div>
       </div>
       <nav aria-label="Navegación principal">
-        <a href="index.html">Home</a>
+        <a href="index.html">Inicio</a>
         <a href="equipo.html">Equipo</a>
         <a href="investigacion.html" class="active">Investigación</a>
         <a href="publicaciones.html">Publicaciones</a>
@@ -32,54 +39,14 @@
   </header>
 
   <main>
-    <section>
-      <div class="wrap narrow">
-        <h2>Líneas de investigación</h2>
-        <p class="lead">Respondemos preguntas aplicadas sobre uso del hábitat, presiones humanas y efectividad de medidas de conservación, con foco en pequeños carnívoros y comunidades de mamíferos.</p>
-      </div>
-    </section>
-
-    <section class="alt">
-      <div class="wrap">
-        <div class="grid">
-          <article class="card">
-            <h3>Diseño de redes de monitoreo</h3>
-            <p class="muted">Cobertura espacial, esfuerzo (días-cámara) y distancias entre estaciones (200 m – 5 km).</p>
-          </article>
-          <article class="card">
-            <h3>Modelos de ocupación y abundancia relativa</h3>
-            <p class="muted">Estimación de probabilidad de uso del sitio, detectabilidad y covariables ambientales.</p>
-          </article>
-          <article class="card">
-            <h3>Solapamiento temporal y co-ocurrencia</h3>
-            <p class="muted">Patrones de actividad diaria e interacciones con perros de libre deambulación.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <h2>Proyectos activos</h2>
-        <div class="grid">
-          <article class="card">
-            <h3>Snapshot Chile 2025</h3>
-            <p class="muted">Red colaborativa de cámaras trampa a nivel nacional e integración con Wildlife Insights.</p>
-            <span class="pill">Colaboración</span> <span class="pill">Estandarización</span>
-          </article>
-          <article class="card">
-            <h3>Carnívoros de bosque templado</h3>
-            <p class="muted">Ocupación, conectividad y coexistencia de güiña y zorro chilote en paisajes mixtos.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+    <!-- Secciones de líneas y proyectos -->
+    ...
   </main>
 
   <footer>
     <div class="wrap foot">
-      <div>© <span id="year"></span> Laboratorio de Fauna Silvestre — Universidad</div>
-      <div>Contenido bajo <a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank" rel="noopener">CC BY 4.0</a></div>
+      <div>© <span id="year"></span> Laboratorio de Fauna Silvestre — Universidad Austral de Chile</div>
+      <div>Contenido bajo <a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank">CC BY 4.0</a></div>
     </div>
   </footer>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
