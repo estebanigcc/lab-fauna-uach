@@ -29,9 +29,12 @@ a{color:#2563eb;text-decoration:none}
 a:hover{text-decoration:underline}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
 
-/* =========================
-   Header / Navbar (único)
-   ========================= */
+/* ===== Header como grilla (logo ocupa dos filas) ===== */
+:root{
+  /* si quieres el logo aún más grande, sube este valor */
+  --logo-w: 160px;
+}
+
 .header{
   background:
     radial-gradient(1200px 500px at 10% -10%, #16a34a22, transparent 60%),
@@ -41,53 +44,74 @@ a:hover{text-decoration:underline}
   padding:20px 0 14px;
 }
 
-.topbar{
-  display:flex;
+/* Contenedor del header en grilla: [logo] [texto/hero] [nav] */
+.mast{
+  display:grid;
+  grid-template-columns: var(--logo-w) 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 14px 24px;
   align-items:center;
-  justify-content:space-between;
-  gap:24px;
 }
 
-/* Marca: logo a la izquierda, textos a la derecha */
-.brand{
-  display:grid;
-  grid-template-columns: var(--logo-w) 1fr;
-  align-items:center;
-  gap:var(--logo-gap);
-}
-.brand .logo{
+/* Logo: columna 1, filas 1–2 */
+.mast-logo{
+  grid-column:1; grid-row:1 / span 2;
   width:var(--logo-w);
   border-radius:12px;
   overflow:hidden;
   background:#ffffff;
   border:1px solid #e2e8f0;
   box-shadow:0 6px 18px rgba(2,6,23,.08);
-  padding:4px;                /* caja compacta, no gigantesca */
+  padding:6px;
 }
-.brand .logo img{
-  display:block;
-  width:100%;
-  height:auto;
-  object-fit:contain;
+.mast-logo img{ width:100%; height:auto; display:block; object-fit:contain }
+
+/* Texto institucional: fila 1, columna 2 */
+.mast-text{
+  grid-column:2; grid-row:1;
+  line-height:1.35;
+}
+.mast-text span{ opacity:.85; font-weight:500 }
+
+/* Navegación: fila 1, columna 3 (a la derecha) */
+.mast-nav{ grid-column:3; grid-row:1; white-space:nowrap }
+.mast-nav a{
+  color:#d9fbe7; font-weight:600; margin-left:18px; opacity:.95;
+}
+.mast-nav a.active{ color:#fff; border-bottom:2px solid #22c55e }
+.mast-nav a:hover{ opacity:1 }
+
+/* Hero: fila 2, columnas 2→3 (se expande hacia la derecha) */
+.mast-hero{ grid-column:2 / 4; grid-row:2; padding:18px 0 10px }
+.mast-hero h1{
+  font-size:clamp(28px,4vw,44px);
+  line-height:1.15;
+  margin:6px 0 10px;
+}
+.mast-hero p{ max-width:850px; color:#c8f1d9; margin:0 }
+
+/* Responsive */
+@media (max-width: 980px){
+  .mast{
+    grid-template-columns: var(--logo-w) 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 12px 16px;
+  }
+  .mast-nav{ grid-column:2; grid-row:1; text-align:right }
+  .mast-hero{ grid-column:1 / 3; grid-row:3 } /* hero a todo el ancho bajo el texto */
+}
+@media (max-width: 640px){
+  :root{ --logo-w: 110px; }
+  .mast{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+  }
+  .mast-logo{ grid-column:1; grid-row:1; margin-bottom:4px; }
+  .mast-text{ grid-column:1; grid-row:2 }
+  .mast-nav{ grid-column:1; grid-row:3; text-align:left }
+  .mast-hero{ grid-column:1; grid-row:4 }
 }
 
-/* Navegación */
-nav a{
-  color:#d9fbe7;
-  font-weight:600;
-  margin-left:18px;
-  opacity:.95;
-}
-nav a.active{
-  color:#ffffff;
-  border-bottom:2px solid #22c55e;
-}
-nav a:hover{opacity:1}
-
-/* Hero (sin corrimientos) */
-.hero{padding:28px 0}
-.hero h1{font-size:clamp(28px,4vw,44px);line-height:1.15;margin:6px 0 10px}
-.hero p{max-width:850px;color:#c8f1d9;margin:0}
 
 /* =========================
    Secciones y utilidades
