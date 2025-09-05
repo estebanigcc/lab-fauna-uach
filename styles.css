@@ -130,17 +130,6 @@ footer a{color:#a7f3d0}
   object-fit:cover;
 }
 
-/* Velo sutil para integrar la foto con la paleta del sitio */
-.about-figure::after{
-  content:"";
-  position:absolute; inset:0;
-  background:
-    radial-gradient(80% 60% at 90% 10%, rgba(22,163,74,.14), transparent 60%),
-    linear-gradient(to top, rgba(2,6,23,.10), transparent 55%);
-  mix-blend-multiply;
-  pointer-events:none;
-}
-
 .about-body{ padding-left:8px; }
 
 /* En móviles, apila imagen arriba y texto abajo */
