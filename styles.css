@@ -188,3 +188,13 @@ footer a{color:#a7f3d0}
   .mast-nav{ grid-column:1; grid-row:3; text-align:left }
   .mast-hero{ grid-column:1; grid-row:4 }
 }
+
+/* Forzar mismo tamaño a imágenes y videos en cards */
+.card-media {
+  display:block;
+  width:100%;
+  aspect-ratio:16/9;   /* todas iguales */
+  object-fit:cover;    /* recorta de forma estética */
+  border-radius:12px;
+  margin-bottom:12px;
+}
