@@ -1,169 +1,45 @@
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Publicaciones — Laboratorio de Fauna Silvestre</title>
-  <meta name="description" content="Publicaciones del Laboratorio de Fauna Silvestre." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    /* Mejoras simples para la tabla activa */
-    .table-tools { display:flex; gap:12px; align-items:center; margin:0 0 12px }
-    .table-tools input[type="search"]{ padding:8px 10px; border:1px solid #cbd5e1; border-radius:10px; width:260px }
-    .table th.sortable{ cursor:pointer; user-select:none }
-    .table th.sortable:after{ content:" ⬍"; font-size:12px; color:#94a3b8 }
-    .tag{ display:inline-block; padding:2px 8px; border-radius:999px; background:#eef2ff; color:#334155; font-size:12px; font-weight:600 }
-    .nowrap{ white-space:nowrap }
-  </style>
-</head>
-<body>
-  <header class="header">
-    <div class="wrap topbar">
-      <div class="brand">
-        <div class="logo">
-          <img src="img/logo-lab.png" alt="Logo Laboratorio de Fauna Silvestre" />
-        </div>
-        <div>
-          Laboratorio de Fauna Silvestre<br>
-          <span style="opacity:.8;font-weight:500">
-            Instituto de Conservación, Biodiversidad y Territorio — Universidad Austral de Chile
-          </span>
-        </div>
+<section>
+  <div class="wrap">
+    <h2>Contacto</h2>
+    <p class="lead">
+      ¿Te interesa colaborar, realizar tu tesis o coordinarnos para actividades de monitoreo y conservación?
+      Escríbenos y conversemos. Atendemos consultas de estudiantes, instituciones públicas, ONG y
+      comunidades locales.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Correo principal</h3>
+        <p class="muted">
+          Prof. <strong>Eduardo Silva</strong><br>
+          <a class="link" href="mailto:eduardo.silva@ejemplo.cl">eduardo.silva@ejemplo.cl</a>
+        </p>
+        <p class="muted" style="margin-top:8px">
+          Si tu mensaje incluye documentos o propuestas, indica objetivos, área geográfica y plazos estimados.
+          Intentamos responder dentro de 3–5 días hábiles.
+        </p>
       </div>
-      <nav aria-label="Navegación principal">
-        <a href="index.html">Inicio</a>
-        <a href="equipo.html">Equipo</a>
-        <a href="investigacion.html">Investigación</a>
-        <a href="publicaciones.html" class="active">Publicaciones</a>
-        <a href="contacto.html">Contacto</a>
-      </nav>
-    </div>
-    <div class="wrap hero">
-      <h1>Publicaciones</h1>
-      <p>Artículos, informes y materiales de divulgación del laboratorio. Usa el buscador para filtrar por autor, título o revista, y haz clic en los encabezados para ordenar.</p>
-    </div>
-  </header>
 
-  <main>
-    <section>
-      <div class="wrap narrow">
-        <div class="table-tools">
-          <input id="filterInput" type="search" placeholder="Buscar por autor, título, revista..." aria-label="Filtrar publicaciones" />
-          <span class="tag">DOI / PDF disponibles</span>
-        </div>
-
-        <table class="table" id="pubsTable">
-          <thead>
-            <tr>
-              <th class="sortable">Año</th>
-              <th class="sortable">Autores</th>
-              <th class="sortable">Título</th>
-              <th class="sortable">Revista</th>
-              <th>DOI</th>
-              <th>PDF</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Ejemplos reales -->
-            <tr>
-              <td class="nowrap">2023</td>
-              <td>Silva-Rodríguez EA; Cortés EI; Zambrano B; Naughton-Treves L; Farías AA</td>
-              <td>On the causes and consequences of the free-roaming dog problem in southern Chile</td>
-              <td>Science of the Total Environment</td>
-              <td><a href="https://doi.org/10.1016/j.scitotenv.2023.164324" target="_blank" rel="noopener">10.1016/j.scitotenv.2023.164324</a></td>
-              <td><a href="https://pubmed.ncbi.nlm.nih.gov/37230363/" target="_blank" rel="noopener">Resumen (PubMed)</a></td>
-            </tr>
-
-            <tr>
-              <td class="nowrap">2009</td>
-              <td>Silva-Rodríguez EA; Soto-Gamboa M; Ortega-Solís GR; Jiménez JE</td>
-              <td>Zorros, gente y gallinas: dimensión humana de un conflicto en un área rural del sur de Chile</td>
-              <td>Revista Chilena de Historia Natural</td>
-              <td><a href="https://doi.org/10.4067/S0716-078X2009000300005" target="_blank" rel="noopener">10.4067/S0716-078X2009000300005</a></td>
-              <td><a href="https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0716-078X2009000300005" target="_blank" rel="noopener">Texto en SciELO</a></td>
-            </tr>
-
-            <tr>
-              <td class="nowrap">2007</td>
-              <td>Silva-Rodríguez EA; Ortega-Solís GR; Jiménez JE</td>
-              <td>Human attitudes toward wild felids in a human-dominated landscape of southern Chile</td>
-              <td>Cat News</td>
-              <td>—</td>
-              <td><a href="https://jaimeejimenez.mallaproducciones.com/wp-content/uploads/2020/09/55-Silva-Rodriguez-etal-HumanAttitudesFelids-2007-CatNews.pdf" target="_blank" rel="noopener">PDF</a></td>
-            </tr>
-
-            <tr>
-              <td class="nowrap">2006</td>
-              <td>Silva-Rodríguez EA; Ortega-Solís GR; Jiménez JE</td>
-              <td>Aves silvestres: actitudes, prácticas y mitos en una localidad rural del sur de Chile</td>
-              <td>Boletín Chileno de Ornitología</td>
-              <td>—</td>
-              <td><a href="https://jaimeejimenez.mallaproducciones.com/wp-content/uploads/2020/09/52-Silva-etal-BirdAttitudesChile-2006-BolChilOrn.pdf" target="_blank" rel="noopener">PDF</a></td>
-            </tr>
-
-            <!-- Ejemplo de fila “placeholder” para que agregues más -->
-            <tr>
-              <td>AAAA</td>
-              <td>Apellido, N.; Apellido, N.</td>
-              <td>Título del artículo</td>
-              <td>Revista Ejemplo</td>
-              <td><a href="#">DOI</a></td>
-              <td><a href="#">PDF</a></td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p class="muted" style="margin-top:10px">Sugerencia: si algún PDF no es de acceso abierto, enlaza al DOI y/o a la página del artículo.</p>
+      <div class="card">
+        <h3>Colaboraciones</h3>
+        <p class="muted">
+          Buscamos alianzas para diseño e implementación de redes de monitoreo, análisis de datos,
+          y gestión adaptativa en áreas protegidas.
+        </p>
       </div>
-    </section>
-  </main>
 
-  <footer>
-    <div class="wrap foot">
-      <div>© <span id="year"></span> Laboratorio de Fauna Silvestre — Universidad Austral de Chile</div>
-      <div>Contenido bajo <a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank" rel="noopener">CC BY 4.0</a></div>
+      <div class="card">
+        <h3>Visítanos</h3>
+        <p class="muted">
+          Instituto de Conservación, Biodiversidad y Territorio<br>
+          Universidad Austral de Chile<br>
+          <em>(Dirección y sala/laboratorio, si aplica)</em>
+        </p>
+      </div>
     </div>
-  </footer>
 
-  <script>
-    // Año dinámico
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Filtrado rápido
-    const filterInput = document.getElementById('filterInput');
-    const table = document.getElementById('pubsTable');
-    const rows = Array.from(table.querySelectorAll('tbody tr'));
-    filterInput.addEventListener('input', () => {
-      const q = filterInput.value.toLowerCase();
-      rows.forEach(tr => {
-        const text = tr.innerText.toLowerCase();
-        tr.style.display = text.includes(q) ? '' : 'none';
-      });
-    });
-
-    // Orden simple por columnas
-    const headers = table.querySelectorAll('th.sortable');
-    headers.forEach((th, idx) => {
-      th.addEventListener('click', () => {
-        const dir = th.dataset.dir === 'asc' ? 'desc' : 'asc';
-        headers.forEach(h => delete h.dataset.dir);
-        th.dataset.dir = dir;
-
-        const sorted = rows.slice().sort((a, b) => {
-          const A = a.children[idx].innerText.trim().toLowerCase();
-          const B = b.children[idx].innerText.trim().toLowerCase();
-          if (!isNaN(A) && !isNaN(B)) { // comparar números (años)
-            return dir === 'asc' ? (+A - +B) : (+B - +A);
-          }
-          return dir === 'asc' ? A.localeCompare(B) : B.localeCompare(A);
-        });
-        const tbody = table.querySelector('tbody');
-        sorted.forEach(tr => tbody.appendChild(tr));
-      });
-    });
-  </script>
-</body>
-</html>
+    <p style="margin-top:16px">
+      <a class="btn" href="mailto:eduardo.silva@ejemplo.cl">Escribir a Eduardo Silva</a>
+    </p>
+  </div>
+</section>
