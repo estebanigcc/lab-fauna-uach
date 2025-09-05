@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="styles.css" />
   <style>
     /* Mejoras para la tabla activa + contenedor ancho */
-    .wrap.wide { max-width: 1200px; } /* más ancho que el default (1100px) */
+    .wrap.wide { max-width: 1200px; }
     .table-tools { display:flex; gap:12px; align-items:center; margin:0 0 12px }
     .table-tools input[type="search"]{ padding:8px 10px; border:1px solid #cbd5e1; border-radius:10px; width:360px }
     .table th.sortable{ cursor:pointer; user-select:none }
@@ -44,7 +44,7 @@
     </div>
     <div class="wrap hero">
       <h1>Publicaciones</h1>
-      <p>Artículos, informes y materiales de divulgación del laboratorio. Usa el buscador para filtrar por autor, título o revista, y haz clic en los encabezados para ordenar.</p>
+      <p>Artículos, capítulos y materiales de divulgación del laboratorio. Usa el buscador para filtrar y haz clic en los encabezados para ordenar.</p>
     </div>
   </header>
 
@@ -53,7 +53,7 @@
       <div class="wrap wide">
         <div class="table-tools">
           <input id="filterInput" type="search" placeholder="Buscar por autor, título, revista..." aria-label="Filtrar publicaciones" />
-          <span class="tag">Enlaces disponibles</span>
+          <span class="tag">Con tipo de documento y enlace</span>
         </div>
 
         <table class="table" id="pubsTable">
@@ -62,57 +62,68 @@
               <th class="sortable">Año</th>
               <th class="sortable">Autores</th>
               <th class="sortable">Título</th>
-              <th class="sortable">Revista</th>
+              <th class="sortable">Revista / Editorial</th>
+              <th class="sortable">Tipo</th>
               <th>Enlace</th>
             </tr>
           </thead>
           <tbody>
-            <!-- Papers -->
             <tr>
               <td class="nowrap">2025</td>
-              <td>Eduardo A. Silva-Rodríguez, Javiera P. Jara-Díaz, Gisselle A. Castillo, Esteban I. Cortés, José Infante-Varela, Javier Godoy-Güinao</td>
+              <td>Eduardo A. Silva-Rodríguez; Javiera P. Jara-Díaz; Gisselle A. Castillo; Esteban I. Cortés; José Infante-Varela; Javier Godoy-Güinao</td>
               <td>Security cameras: a tool for reducing risks and increasing selectivity in wildlife trapping</td>
               <td>Mammalian Biology</td>
+              <td>Paper</td>
               <td><a href="https://doi.org/10.1007/s42991-025-00504-z" target="_blank" rel="noopener">DOI</a></td>
             </tr>
 
             <tr>
               <td class="nowrap">2025</td>
-              <td>Eduardo A. Silva-Rodríguez, Melissa A. Pavez-Fox, Darío Moreira-Arce</td>
+              <td>Eduardo A. Silva-Rodríguez; Melissa A. Pavez-Fox; Darío Moreira-Arce</td>
               <td>Southern Pudu Pudu puda (G. I. Molina, 1782)</td>
-              <td>Deer of the World: Ecology, Conservation and Management</td>
-              <td>
-                <a href="https://doi.org/10.1007/978-3-031-17756-9_37" target="_blank" rel="noopener">DOI</a>
-              </td>
+              <td>En: <em>Deer of the World: Ecology, Conservation and Management</em></td>
+              <td>Capítulo de libro</td>
+              <td><a href="https://doi.org/10.1007/978-3-031-17756-9_37" target="_blank" rel="noopener">DOI</a></td>
             </tr>
 
             <tr>
-              <td class="nowrap">2009</td>
-              <td>Eduardo A. Silva‐Rodríguez, Esteban I. Cortés, Viviana Vasquez‐Ibarra, Nicolás Gálvez, Jeremy Cusack, Omar Ohrens, Darío Moreira‐Arce, Ariel A Farías, José Infante‐Varela</td>
+              <td class="nowrap">2024</td>
+              <td>Eduardo A. Silva‐Rodríguez; Esteban I. Cortés; Viviana Vásquez-Ibarra; Nicolás Gálvez; Jeremy Cusack; Omar Ohrens; Darío Moreira-Arce; Ariel A. Farías; José Infante-Varela</td>
               <td>A protocol for error prevention and quality control in camera trap datasets</td>
               <td>Journal of Applied Ecology</td>
+              <td>Paper</td>
               <td><a href="https://doi.org/10.1111/1365-2664.70010" target="_blank" rel="noopener">DOI</a></td>
             </tr>
 
             <tr>
-              <td class="nowrap">2007</td>
-              <td>Eduardo A. Silva-Rodríguez, Esteban I. Cortés, Ximena Álvarez, Diego Cabeza, Benjamín Cáceres, et. al.</td>
+              <td class="nowrap">2024</td>
+              <td>Eduardo A. Silva-Rodríguez; Esteban I. Cortés; Ximena Álvarez; Diego Cabeza; Benjamín Cáceres; et al.</td>
               <td>A camera-trap assessment of the native and invasive mammals present in protected areas of Magallanes, Chilean Patagonia</td>
               <td>Gayana</td>
-              <td><a href="http://dx.doi.org/10.4067/S0717-65382024000100027" target="_blank" rel="noopener">PDF</a></td>
+              <td>Paper</td>
+              <td><a href="http://dx.doi.org/10.4067/S0717-65382024000100027" target="_blank" rel="noopener">DOI</a></td>
             </tr>
 
             <tr>
-              <td class="nowrap">2006</td>
-              <td>Cole Burton, Christopher Beirne, Kaitlyn M. Gaynor, Catherine Sun, Alys Granados, el. al.</td>
+              <td class="nowrap">2024</td>
+              <td>Cole Burton; Christopher Beirne; Kaitlyn M. Gaynor; Catherine Sun; Alys Granados; et al.</td>
               <td>Mammal responses to global changes in human activity vary by trophic group and landscape</td>
-              <td>Nature ecology & evolution</td>
-              <td><a href="https://doi.org/10.1038/s41559-024-02363-2" target="_blank" rel="noopener">PDF</a></td>
+              <td>Nature Ecology & Evolution</td>
+              <td>Paper</td>
+              <td><a href="https://doi.org/10.1038/s41559-024-02363-2" target="_blank" rel="noopener">DOI</a></td>
             </tr>
-            
+
+            <!-- Placeholder -->
+            <tr>
+              <td>AAAA</td>
+              <td>Apellido, N.; Apellido, N.</td>
+              <td>Título del documento</td>
+              <td>Revista / Editorial</td>
+              <td>Tipo</td>
+              <td><a href="#">Enlace</a></td>
+            </tr>
           </tbody>
         </table>
-
       </div>
     </section>
   </main>
@@ -125,10 +136,9 @@
   </footer>
 
   <script>
-    // Año dinámico
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Filtrado rápido
+    // Filtrado
     const filterInput = document.getElementById('filterInput');
     const table = document.getElementById('pubsTable');
     const rows = Array.from(table.querySelectorAll('tbody tr'));
@@ -140,18 +150,17 @@
       });
     });
 
-    // Orden simple por columnas
+    // Orden por columnas
     const headers = table.querySelectorAll('th.sortable');
     headers.forEach((th, idx) => {
       th.addEventListener('click', () => {
         const dir = th.dataset.dir === 'asc' ? 'desc' : 'asc';
         headers.forEach(h => delete h.dataset.dir);
         th.dataset.dir = dir;
-
         const sorted = rows.slice().sort((a, b) => {
           const A = a.children[idx].innerText.trim().toLowerCase();
           const B = b.children[idx].innerText.trim().toLowerCase();
-          if (!isNaN(A) && !isNaN(B)) { // comparar números (años)
+          if (!isNaN(A) && !isNaN(B)) {
             return dir === 'asc' ? (+A - +B) : (+B - +A);
           }
           return dir === 'asc' ? A.localeCompare(B) : B.localeCompare(A);
