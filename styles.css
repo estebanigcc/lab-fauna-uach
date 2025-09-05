@@ -103,4 +103,46 @@ footer a{color:#a7f3d0}
   box-shadow:0 10px 24px rgba(34,197,94,.33);
 }
 .btn:active{ transform:translateY(1px); }
+/* Bloque "Quiénes somos" con imagen lateral */
+.about-grid{
+  display:grid;
+  grid-template-columns:minmax(260px,520px) 1fr; /* foto | texto */
+  gap:28px;
+  align-items:center;
+}
+
+.about-figure{
+  position:relative;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid #e2e8f0;
+  box-shadow:var(--shadow);
+}
+.about-figure img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:cover;
+}
+
+/* Velo sutil para integrar la foto con la paleta del sitio */
+.about-figure::after{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    radial-gradient(80% 60% at 90% 10%, rgba(22,163,74,.14), transparent 60%),
+    linear-gradient(to top, rgba(2,6,23,.10), transparent 55%);
+  mix-blend-multiply;
+  pointer-events:none;
+}
+
+/* Empuja un poco el texto a la derecha */
+.about-body{ padding-left:8px; }
+
+/* En móviles, apila imagen arriba y texto abajo */
+@media (max-width: 860px){
+  .about-grid{ grid-template-columns:1fr; }
+  .about-body{ padding-left:0; }
+}
+
 
