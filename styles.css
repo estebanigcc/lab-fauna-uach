@@ -103,21 +103,26 @@ footer a{color:#a7f3d0}
   box-shadow:0 10px 24px rgba(34,197,94,.33);
 }
 .btn:active{ transform:translateY(1px); }
+
+
 /* Bloque "Quiénes somos" con imagen lateral */
 .about-grid{
   display:grid;
-  grid-template-columns:minmax(260px,520px) 1fr; /* foto | texto */
-  gap:28px;
+  grid-template-columns: 1fr 1.2fr; /* foto más estrecha, texto más ancho */
+  gap:32px;
   align-items:center;
 }
 
 .about-figure{
-  position:relative;
+  max-width:480px;     /* nunca más ancha que 480px */
+  width:100%;
   border-radius:16px;
   overflow:hidden;
   border:1px solid #e2e8f0;
   box-shadow:var(--shadow);
+  justify-self:center; /* centra la foto dentro de su columna */
 }
+
 .about-figure img{
   display:block;
   width:100%;
@@ -136,13 +141,11 @@ footer a{color:#a7f3d0}
   pointer-events:none;
 }
 
-/* Empuja un poco el texto a la derecha */
 .about-body{ padding-left:8px; }
 
 /* En móviles, apila imagen arriba y texto abajo */
 @media (max-width: 860px){
   .about-grid{ grid-template-columns:1fr; }
   .about-body{ padding-left:0; }
+  .about-figure{ max-width:100%; }
 }
-
-
