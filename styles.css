@@ -208,3 +208,13 @@ footer a{color:#a7f3d0}
   .about-body{padding-left:0}
   .about-figure{max-width:100%}
 }
+
+/* Imágenes de tarjetas de proyectos */
+.card-img{
+  display:block;
+  width:100%;
+  aspect-ratio:16/9;   /* mantiene todas con la misma proporción */
+  object-fit:cover;    /* recorte estético si la foto es más alta/ancha */
+  border-radius:12px;
+  margin-bottom:12px;
+}
