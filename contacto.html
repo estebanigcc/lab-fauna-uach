@@ -1,45 +1,124 @@
-<section>
-  <div class="wrap">
-    <h2>Contacto</h2>
-    <p class="lead">
-      ¿Te interesa colaborar, realizar tu tesis o coordinarnos para actividades de monitoreo y conservación?
-      Escríbenos y conversemos. Atendemos consultas de estudiantes, instituciones públicas, ONG y
-      comunidades locales.
-    </p>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Correo principal</h3>
-        <p class="muted">
-          Prof. <strong>Eduardo Silva</strong><br>
-          <a class="link" href="mailto:eduardo.silva@ejemplo.cl">eduardo.silva@ejemplo.cl</a>
-        </p>
-        <p class="muted" style="margin-top:8px">
-          Si tu mensaje incluye documentos o propuestas, indica objetivos, área geográfica y plazos estimados.
-          Intentamos responder dentro de 3–5 días hábiles.
-        </p>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contacto — Laboratorio de Fauna Silvestre</title>
+  <meta name="description" content="Contacto del Laboratorio de Fauna Silvestre." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header coherente -->
+  <header class="header">
+    <div class="wrap topbar">
+      <div class="brand">
+        <div class="logo">
+          <img src="img/logo-lab.png" alt="Logo Laboratorio de Fauna Silvestre" />
+        </div>
+        <div>
+          Laboratorio de Fauna Silvestre<br>
+          <span style="opacity:.8;font-weight:500">
+            Instituto de Conservación, Biodiversidad y Territorio — Universidad Austral de Chile
+          </span>
+        </div>
       </div>
-
-      <div class="card">
-        <h3>Colaboraciones</h3>
-        <p class="muted">
-          Buscamos alianzas para diseño e implementación de redes de monitoreo, análisis de datos,
-          y gestión adaptativa en áreas protegidas.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Visítanos</h3>
-        <p class="muted">
-          Instituto de Conservación, Biodiversidad y Territorio<br>
-          Universidad Austral de Chile<br>
-          <em>(Dirección y sala/laboratorio, si aplica)</em>
-        </p>
-      </div>
+      <nav aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="equipo.html">Equipo</a>
+        <a href="investigacion.html">Investigación</a>
+        <a href="publicaciones.html">Publicaciones</a>
+        <a href="contacto.html" class="active">Contacto</a>
+      </nav>
     </div>
+    <div class="wrap hero">
+      <h1>Contacto</h1>
+      <p>Colaboraciones, tesis, y coordinación de actividades de monitoreo y conservación.</p>
+    </div>
+  </header>
 
-    <p style="margin-top:16px">
-      <a class="btn" href="mailto:eduardo.silva@ejemplo.cl">Escribir a Eduardo Silva</a>
-    </p>
-  </div>
-</section>
+  <main>
+    <!-- Sección principal (misma estructura de las otras páginas) -->
+    <section>
+      <div class="wrap">
+        <h2>Escríbenos</h2>
+        <p class="lead">
+          ¿Te interesa colaborar, realizar tu tesis o coordinarnos para actividades de monitoreo y conservación?
+          Escríbenos y conversemos. Atendemos consultas de estudiantes, instituciones públicas, ONG y
+          comunidades locales.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Correo principal</h3>
+            <p class="muted">
+              Prof. <strong>Eduardo Silva</strong><br>
+              <a class="link" href="mailto:eduardo.silva@ejemplo.cl">eduardo.silva@ejemplo.cl</a>
+            </p>
+            <p class="muted" style="margin-top:8px">
+              Si tu mensaje incluye documentos o propuestas, indica objetivos, área geográfica y plazos estimados.
+              Intentamos responder dentro de 3–5 días hábiles.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Colaboraciones</h3>
+            <p class="muted">
+              Buscamos alianzas para diseño e implementación de redes de monitoreo, análisis de datos
+              y gestión adaptativa en áreas protegidas.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Visítanos</h3>
+            <p class="muted">
+              Instituto de Conservación, Biodiversidad y Territorio<br>
+              Universidad Austral de Chile<br>
+              <em>(Dirección y sala/laboratorio, si aplica)</em>
+            </p>
+          </div>
+        </div>
+
+        <p style="margin-top:16px">
+          <a class="btn" href="mailto:eduardo.silva@ejemplo.cl">Escribir a Eduardo Silva</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Franja alternativa para mantener ritmo visual (opcional) -->
+    <section class="alt">
+      <div class="wrap">
+        <h2>Indicaciones rápidas</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Temas frecuentes</h3>
+            <p class="muted">Cámaras trampa, co-ocurrencia, ocupación, áreas protegidas, dimensiones humanas.</p>
+          </div>
+          <div class="card">
+            <h3>Plazos</h3>
+            <p class="muted">Para propuestas de colaboración, considera un tiempo de respuesta estimado de 3–5 días hábiles.</p>
+          </div>
+          <div class="card">
+            <h3>Archivos</h3>
+            <p class="muted">Adjunta documentos en PDF o DOCX con objetivos, área geográfica y cronograma tentativo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer coherente -->
+  <footer>
+    <div class="wrap foot">
+      <div>© <span id="year"></span> Laboratorio de Fauna Silvestre — Universidad Austral de Chile</div>
+      <div>Contenido bajo <a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank" rel="noopener">CC BY 4.0</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
