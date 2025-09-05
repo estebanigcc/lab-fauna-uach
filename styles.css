@@ -12,9 +12,8 @@
   --shadow:0 10px 25px rgba(2,6,23,0.08);
 
   /* Tamaño y separación del logo en el header */
-  --logo-w:120px;   /* ancho del contenedor del logo */
-  --logo-h:64px;    /* alto del contenedor del logo  */
-  --logo-gap:14px;  /* separación entre logo y texto */
+  --logo-w:140px;   /* ancho visible del logo */
+  --logo-gap:14px;  /* espacio entre logo y textos */
 }
 
 *{box-sizing:border-box}
@@ -30,7 +29,9 @@ a{color:#2563eb;text-decoration:none}
 a:hover{text-decoration:underline}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
 
-/* Header / Navbar */
+/* =========================
+   Header / Navbar (único)
+   ========================= */
 .header{
   background:
     radial-gradient(1200px 500px at 10% -10%, #16a34a22, transparent 60%),
@@ -42,29 +43,26 @@ a:hover{text-decoration:underline}
 
 .topbar{
   display:flex;
-  align-items:flex-start;   /* logo arriba */
+  align-items:center;
   justify-content:space-between;
-  gap:32px;
+  gap:24px;
 }
 
-/* Bloque de marca a la izquierda */
+/* Marca: logo a la izquierda, textos a la derecha */
 .brand{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:6px;
-  max-width:280px; /* controla ancho del bloque de marca */
+  display:grid;
+  grid-template-columns: var(--logo-w) 1fr;
+  align-items:center;
+  gap:var(--logo-gap);
 }
-
-/* Logo rectangular grande */
 .brand .logo{
-  width:160px;
-  height:auto;
+  width:var(--logo-w);
   border-radius:12px;
   overflow:hidden;
   background:#ffffff;
   border:1px solid #e2e8f0;
   box-shadow:0 6px 18px rgba(2,6,23,.08);
+  padding:4px;                /* caja compacta, no gigantesca */
 }
 .brand .logo img{
   display:block;
@@ -73,7 +71,7 @@ a:hover{text-decoration:underline}
   object-fit:contain;
 }
 
-/* Nav a la derecha */
+/* Navegación */
 nav a{
   color:#d9fbe7;
   font-weight:600;
@@ -86,53 +84,14 @@ nav a.active{
 }
 nav a:hover{opacity:1}
 
-/* Hero sin corrimiento artificial */
-.hero{
-  padding:28px 0;
-}
-.hero h1{
-  font-size:clamp(28px,4vw,44px);
-  line-height:1.15;
-  margin:6px 0 10px;
-}
-.hero p{
-  max-width:850px;
-  color:#c8f1d9;
-  margin:0;
-}
-
-
-/* Marca (logo rectangular + textos) */
-.brand{display:flex;align-items:center;gap:var(--logo-gap)}
-.brand .logo{
-  width:var(--logo-w);
-  height:var(--logo-h);
-  border-radius:10px;
-  overflow:hidden;
-  display:flex;align-items:center;justify-content:center;
-  background:#ffffff;
-  border:1px solid #e2e8f0;
-  box-shadow:0 6px 18px rgba(2,6,23,.08);
-  padding:6px; /* margen interno para logos con borde transparente */
-}
-.brand .logo img{
-  width:100%;height:100%;object-fit:contain;display:block;
-}
-
-.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px}
-nav a{color:#d9fbe7;font-weight:600;margin-left:14px;opacity:.95}
-nav a.active{color:#ffffff;border-bottom:2px solid #22c55e}
-nav a:hover{opacity:1}
-
-/* Hero */
+/* Hero (sin corrimientos) */
 .hero{padding:28px 0}
 .hero h1{font-size:clamp(28px,4vw,44px);line-height:1.15;margin:6px 0 10px}
 .hero p{max-width:850px;color:#c8f1d9;margin:0}
 
-/* Alinea el hero con el bloque de marca (compensa el ancho del logo) */
-.header .hero{padding-left:calc(var(--logo-w) + var(--logo-gap))}
-
-/* Sections */
+/* =========================
+   Secciones y utilidades
+   ========================= */
 section{padding:48px 0}
 h2{font-size:clamp(22px,3vw,30px);margin:0 0 12px}
 .lead{color:var(--muted);margin:0 0 20px}
@@ -197,24 +156,26 @@ footer{padding:28px 0;background:#0b1220;color:#cde7ff;font-size:14px}
 footer a{color:#a7f3d0}
 .foot{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between}
 
-/* Responsivo */
-@media (max-width:1020px){
-  nav a{margin-left:10px}
-}
-@media (max-width:860px){
-  :root{ --logo-w:80px; --logo-h:44px; } /* logo más chico en móvil */
-  .header .hero{padding-left:0}          /* no compensar en pantallas pequeñas */
-  .about-grid{grid-template-columns:1fr}
-  .about-body{padding-left:0}
-  .about-figure{max-width:100%}
-}
-
 /* Imágenes de tarjetas de proyectos */
 .card-img{
   display:block;
   width:100%;
-  aspect-ratio:16/9;   /* mantiene todas con la misma proporción */
-  object-fit:cover;    /* recorte estético si la foto es más alta/ancha */
+  aspect-ratio:16/9;
+  object-fit:cover;
   border-radius:12px;
   margin-bottom:12px;
+}
+
+/* =========================
+   Responsivo
+   ========================= */
+@media (max-width:1020px){
+  nav a{margin-left:12px}
+}
+@media (max-width:860px){
+  :root{ --logo-w:95px; }      /* logo más chico en móvil */
+  .brand{grid-template-columns: var(--logo-w) 1fr;}
+  .about-grid{grid-template-columns:1fr}
+  .about-body{padding-left:0}
+  .about-figure{max-width:100%}
 }
