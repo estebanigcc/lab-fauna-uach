@@ -1,4 +1,5 @@
-/* styles.css - Estilo global para el sitio del laboratorio */
+/* styles.css - Estilo global para el sitio del laboratorio
+   — versión limpia con header en grilla (logo ocupa 2 filas) — */
 :root{
   --bg:#0b1220;
   --brand:#16a34a;
@@ -11,9 +12,8 @@
   --radius:18px;
   --shadow:0 10px 25px rgba(2,6,23,0.08);
 
-  /* Tamaño y separación del logo en el header */
-  --logo-w:140px;   /* ancho visible del logo */
-  --logo-gap:14px;  /* espacio entre logo y textos */
+  /* Tamaño del logo en el header (ajusta aquí) */
+  --logo-w:160px;
 }
 
 *{box-sizing:border-box}
@@ -29,12 +29,9 @@ a{color:#2563eb;text-decoration:none}
 a:hover{text-decoration:underline}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
 
-/* ===== Header como grilla (logo ocupa dos filas) ===== */
-:root{
-  /* si quieres el logo aún más grande, sube este valor */
-  --logo-w: 160px;
-}
-
+/* =========================
+   Header en grilla (logo 2 filas)
+   ========================= */
 .header{
   background:
     radial-gradient(1200px 500px at 10% -10%, #16a34a22, transparent 60%),
@@ -44,12 +41,12 @@ a:hover{text-decoration:underline}
   padding:20px 0 14px;
 }
 
-/* Contenedor del header en grilla: [logo] [texto/hero] [nav] */
+/* [logo] [texto/hero] [nav]  ×  2 filas */
 .mast{
   display:grid;
   grid-template-columns: var(--logo-w) 1fr auto;
-  grid-template-rows: auto auto;
-  gap: 14px 24px;
+  grid-template-rows: auto auto;          /* fila 1: texto/nav · fila 2: hero */
+  gap:14px 24px;
   align-items:center;
 }
 
@@ -57,23 +54,25 @@ a:hover{text-decoration:underline}
 .mast-logo{
   grid-column:1; grid-row:1 / span 2;
   width:var(--logo-w);
+  aspect-ratio:3/4;                       /* caja vertical estable */
   border-radius:12px;
   overflow:hidden;
-  background:#ffffff;
+  background:#fff;
   border:1px solid #e2e8f0;
   box-shadow:0 6px 18px rgba(2,6,23,.08);
   padding:6px;
 }
-.mast-logo img{ width:100%; height:auto; display:block; object-fit:contain }
-
-/* Texto institucional: fila 1, columna 2 */
-.mast-text{
-  grid-column:2; grid-row:1;
-  line-height:1.35;
+.mast-logo img{
+  display:block;
+  width:100%; height:100%;
+  object-fit:contain;                      /* nunca se desborda */
 }
+
+/* Texto institucional (fila 1, columna 2) */
+.mast-text{ grid-column:2; grid-row:1; line-height:1.35 }
 .mast-text span{ opacity:.85; font-weight:500 }
 
-/* Navegación: fila 1, columna 3 (a la derecha) */
+/* Navegación (fila 1, columna 3) */
 .mast-nav{ grid-column:3; grid-row:1; white-space:nowrap }
 .mast-nav a{
   color:#d9fbe7; font-weight:600; margin-left:18px; opacity:.95;
@@ -81,7 +80,7 @@ a:hover{text-decoration:underline}
 .mast-nav a.active{ color:#fff; border-bottom:2px solid #22c55e }
 .mast-nav a:hover{ opacity:1 }
 
-/* Hero: fila 2, columnas 2→3 (se expande hacia la derecha) */
+/* Hero (fila 2, columnas 2→3) */
 .mast-hero{ grid-column:2 / 4; grid-row:2; padding:18px 0 10px }
 .mast-hero h1{
   font-size:clamp(28px,4vw,44px);
@@ -89,29 +88,6 @@ a:hover{text-decoration:underline}
   margin:6px 0 10px;
 }
 .mast-hero p{ max-width:850px; color:#c8f1d9; margin:0 }
-
-/* Responsive */
-@media (max-width: 980px){
-  .mast{
-    grid-template-columns: var(--logo-w) 1fr;
-    grid-template-rows: auto auto auto;
-    gap: 12px 16px;
-  }
-  .mast-nav{ grid-column:2; grid-row:1; text-align:right }
-  .mast-hero{ grid-column:1 / 3; grid-row:3 } /* hero a todo el ancho bajo el texto */
-}
-@media (max-width: 640px){
-  :root{ --logo-w: 110px; }
-  .mast{
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
-  }
-  .mast-logo{ grid-column:1; grid-row:1; margin-bottom:4px; }
-  .mast-text{ grid-column:1; grid-row:2 }
-  .mast-nav{ grid-column:1; grid-row:3; text-align:left }
-  .mast-hero{ grid-column:1; grid-row:4 }
-}
-
 
 /* =========================
    Secciones y utilidades
@@ -164,8 +140,7 @@ h2{font-size:clamp(22px,3vw,30px);margin:0 0 12px}
   align-items:center;
 }
 .about-figure{
-  max-width:480px;
-  width:100%;
+  max-width:480px; width:100%;
   border-radius:16px;
   overflow:hidden;
   border:1px solid #e2e8f0;
@@ -193,62 +168,6 @@ footer a{color:#a7f3d0}
 /* =========================
    Responsivo
    ========================= */
-@media (max-width:1020px){
-  nav a{margin-left:12px}
-}
-@media (max-width:860px){
-  :root{ --logo-w:95px; }      /* logo más chico en móvil */
-  .brand{grid-template-columns: var(--logo-w) 1fr;}
-  .about-grid{grid-template-columns:1fr}
-  .about-body{padding-left:0}
-  .about-figure{max-width:100%}
-}
-
-/* ===== FIX header: logo ocupa dos filas y nunca se desborda ===== */
-:root{ --logo-w: 160px; }  /* ajusta el tamaño del logo aquí */
-
-.header{ color:#e5f6ed; }
-.mast{
-  display:grid;
-  grid-template-columns: var(--logo-w) 1fr auto;
-  grid-template-rows: auto auto;
-  gap:14px 24px;
-  align-items:center;
-}
-
-/* Logo: izquierda, filas 1–2 */
-.mast-logo{
-  grid-column:1; grid-row:1 / span 2;
-  width:var(--logo-w);
-  aspect-ratio: 3/4;              /* caja estable (vertical) */
-  border-radius:12px;
-  overflow:hidden;
-  background:#fff;
-  border:1px solid #e2e8f0;
-  box-shadow:0 6px 18px rgba(2,6,23,.08);
-  padding:6px;
-}
-.mast-logo img{
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:contain;             /* NUNCA se sale de la caja */
-}
-
-/* Texto institucional y navegación */
-.mast-text{ grid-column:2; grid-row:1; line-height:1.35 }
-.mast-text span{ opacity:.85; font-weight:500 }
-.mast-nav{ grid-column:3; grid-row:1; white-space:nowrap }
-.mast-nav a{ color:#d9fbe7; font-weight:600; margin-left:18px; opacity:.95 }
-.mast-nav a.active{ color:#fff; border-bottom:2px solid #22c55e }
-.mast-nav a:hover{ opacity:1 }
-
-/* Hero (debajo del texto) */
-.mast-hero{ grid-column:2 / 4; grid-row:2; padding:18px 0 10px }
-.mast-hero h1{ font-size:clamp(28px,4vw,44px); line-height:1.15; margin:6px 0 10px }
-.mast-hero p{ max-width:850px; color:#c8f1d9; margin:0 }
-
-/* Responsive */
 @media (max-width: 980px){
   .mast{
     grid-template-columns: var(--logo-w) 1fr;
@@ -259,14 +178,13 @@ footer a{color:#a7f3d0}
   .mast-hero{ grid-column:1 / 3; grid-row:3 }
 }
 @media (max-width: 640px){
-  :root{ --logo-w: 110px; }
+  :root{ --logo-w:110px; }            /* logo más chico en móvil */
   .mast{
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
+    grid-template-columns:1fr;
+    grid-template-rows:auto auto auto auto;
   }
-  .mast-logo{ grid-column:1; grid-row:1; margin-bottom:4px; }
+  .mast-logo{ grid-column:1; grid-row:1; margin-bottom:4px }
   .mast-text{ grid-column:1; grid-row:2 }
   .mast-nav{ grid-column:1; grid-row:3; text-align:left }
   .mast-hero{ grid-column:1; grid-row:4 }
 }
-
