@@ -40,6 +40,68 @@ a:hover{text-decoration:underline}
   padding:20px 0 14px;
 }
 
+.topbar{
+  display:flex;
+  align-items:flex-start;   /* logo arriba */
+  justify-content:space-between;
+  gap:32px;
+}
+
+/* Bloque de marca a la izquierda */
+.brand{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:6px;
+  max-width:280px; /* controla ancho del bloque de marca */
+}
+
+/* Logo rectangular grande */
+.brand .logo{
+  width:160px;
+  height:auto;
+  border-radius:12px;
+  overflow:hidden;
+  background:#ffffff;
+  border:1px solid #e2e8f0;
+  box-shadow:0 6px 18px rgba(2,6,23,.08);
+}
+.brand .logo img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+
+/* Nav a la derecha */
+nav a{
+  color:#d9fbe7;
+  font-weight:600;
+  margin-left:18px;
+  opacity:.95;
+}
+nav a.active{
+  color:#ffffff;
+  border-bottom:2px solid #22c55e;
+}
+nav a:hover{opacity:1}
+
+/* Hero sin corrimiento artificial */
+.hero{
+  padding:28px 0;
+}
+.hero h1{
+  font-size:clamp(28px,4vw,44px);
+  line-height:1.15;
+  margin:6px 0 10px;
+}
+.hero p{
+  max-width:850px;
+  color:#c8f1d9;
+  margin:0;
+}
+
+
 /* Marca (logo rectangular + textos) */
 .brand{display:flex;align-items:center;gap:var(--logo-gap)}
 .brand .logo{
